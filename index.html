@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annet&Beauty — Varianta 2 · Auriu & Argintiu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #b8a060;
+  --rose-deep: #C9A84C;
+  --rose-pale: #f5f0e0;
+  --rose-bg: #f0ead0;
+  --cream: #0a0a0a;
+  --ivory: #141414;
+  --dark: #C9A84C;
+  --mid: #c0c0c0;
+  --text: #f0f0f0;
+  --text-light: #a0a0a0;
+  --gold: #C9A84C;
+  --silver: #C0C0C0;
+  --white: #f5f5f5;
+  --accent: #C9A84C;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:#0a0a0a;color:#f0f0f0;overflow-x:hidden;}
+
+/* PAGES */
+.page{display:none;min-height:100vh;}
+.page.active{display:block;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(194,55,90,0.15);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:‘Cormorant Garamond’,serif;font-size:1.45rem;font-weight:600;letter-spacing:0.06em;color:#f0f0f0;cursor:pointer;white-space:nowrap;}
+.logo span{color:#C9A84C;}
+nav{display:flex;align-items:center;gap:0.05rem;}
+nav a{font-size:0.7rem;font-weight:400;letter-spacing:0.11em;text-transform:uppercase;color:#c0c0c0;padding:0.4rem 0.55rem;text-decoration:none;transition:color 0.2s;cursor:pointer;}
+nav a:hover{color:var(–rose-deep);}
+.header-right{display:flex;align-items:center;gap:0.8rem;}
+.lang-switch{display:flex;gap:0.2rem;}
+.lang-btn{font-size:0.65rem;letter-spacing:0.1em;color:var(–text-light);background:none;border:none;cursor:pointer;padding:0.2rem 0.3rem;font-family:‘Jost’,sans-serif;transition:color 0.2s;}
+.lang-btn:hover,.lang-btn.active{color:var(–rose-deep);}
+.btn-discover{background:linear-gradient(135deg,#C9A84C,#e8c96a);color:#0a0a0a;border:none;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.6rem 1.2rem;transition:background 0.25s;white-space:nowrap;}
+.btn-discover:hover{background:linear-gradient(135deg,#e8c96a,#C9A84C);}
+.ig-link{color:#c0c0c0;text-decoration:none;font-size:0.8rem;transition:color 0.2s;}
+.ig-link:hover{color:var(–rose-deep);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(–dark);transition:all 0.3s;}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,245,248,0.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(194,55,90,0.15);z-index:99;padding:1rem 2rem;flex-direction:column;gap:0.2rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:#c0c0c0;padding:0.7rem 0;text-decoration:none;cursor:pointer;border-bottom:1px solid rgba(194,55,90,0.1);}
+
+/* BUTTONS */
+.btn-primary{background:linear-gradient(135deg,#C9A84C,#e8c96a);color:#0a0a0a;border:none;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.9rem 2rem;transition:all 0.25s;font-weight:600;box-shadow:0 2px 12px rgba(201,168,76,0.3);}
+.btn-primary:hover{background:linear-gradient(135deg,#e8c96a,#C9A84C);transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,168,76,0.5);}
+.btn-outline{background:transparent;color:#C0C0C0;border:1.5px solid #C0C0C0;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.9rem 2rem;transition:all 0.25s;}
+.btn-outline:hover{background:#C0C0C0;color:#0a0a0a;}
+.btn-dark{background:var(–dark);color:var(–cream);border:none;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.9rem 2rem;transition:all 0.25s;}
+.btn-dark:hover{background:var(–rose-deep);}
+.btn-ghost{background:transparent;color:#888;border:1px solid #444;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.75rem 1.5rem;transition:all 0.25s;}
+.btn-ghost:hover{border-color:#C9A84C;color:#C9A84C;}
+
+/* PAGE HEADER */
+.page-header{padding-top:calc(64px + 3rem);padding-bottom:2rem;padding-left:2rem;padding-right:2rem;background:linear-gradient(160deg,#1a1518 0%,#0a0a0a 100%);border-bottom:1px solid rgba(194,55,90,0.12);}
+.page-header-inner{max-width:900px;margin:0 auto;}
+.page-eyebrow{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:0.8rem;display:block;}
+.page-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#f0f0f0;margin-bottom:0.8rem;line-height:1.15;}
+.page-sub{font-size:0.92rem;color:var(–text-light);line-height:1.8;max-width:620px;}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–text-light);cursor:pointer;transition:color 0.2s;margin-bottom:2rem;}
+.back-link:hover{color:var(–rose-deep);}
+
+/* SECTIONS */
+.section{padding:4.5rem 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C;margin-bottom:0.8rem;display:block;}
+.section-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;color:#f0f0f0;margin-bottom:1rem;}
+.section-sub{font-size:0.9rem;color:var(–text-light);line-height:1.8;max-width:560px;}
+
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.card{background:#1a1a1a;padding:2rem;border:1px solid rgba(194,55,90,0.12);transition:all 0.3s;position:relative;}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(194,55,90,0.1);border-color:var(–rose);}
+.card-num{font-family:‘Cormorant Garamond’,serif;font-size:2.5rem;font-weight:300;color:var(–rose);line-height:1;margin-bottom:0.5rem;}
+.card-title{font-size:0.9rem;font-weight:500;color:#f0f0f0;margin-bottom:0.6rem;letter-spacing:0.04em;}
+.card-text{font-size:0.82rem;color:var(–text-light);line-height:1.7;margin-bottom:1.2rem;}
+.card-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem;}
+.card-tag{background:#222;color:#C9A84C;font-size:0.65rem;letter-spacing:0.08em;padding:0.25rem 0.6rem;}
+
+/* HERO */
+.hero{padding-top:64px;min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a0a0a 0%,#0f0f0f 40%,#1a1518 100%);}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;}
+.hero-orb:nth-child(1){width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(194,55,90,0.12) 0%,transparent 70%);}
+.hero-orb:nth-child(2){width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(240,184,200,0.25) 0%,transparent 70%);}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(–rose-deep);margin-bottom:1.2rem;font-weight:400;}
+.hero-h1{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:300;line-height:1.1;color:#f0f0f0;margin-bottom:1.5rem;}
+.hero-h1 em{font-style:italic;color:#C9A84C;}
+.hero-sub{font-size:0.95rem;font-weight:300;line-height:1.8;color:#c0c0c0;margin-bottom:2.5rem;max-width:440px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative;}
+
+/* PRODUCT VISUAL CARD */
+.prod-visual{background:#1a1a1a;border-radius:2px;padding:2.5rem;box-shadow:0 20px 80px rgba(194,55,90,0.12);max-width:340px;width:100%;position:relative;}
+.prod-visual::before{content:’’;position:absolute;inset:-8px;border:1px solid rgba(194,55,90,0.2);pointer-events:none;}
+
+/* PRODUCT IMAGE PLACEHOLDER */
+.prod-img{width:100%;height:220px;background:linear-gradient(135deg,var(–rose-pale) 0%,var(–ivory) 100%);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;position:relative;overflow:hidden;}
+.prod-img::after{content:’’;position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(194,55,90,0.06));}
+.prod-img svg{opacity:0.3;}
+.prod-img img{width:100%;height:100%;object-fit:contain;padding:1rem;}
+
+/* PARFUM CARD */
+.parfum-card{background:#1a1a1a;border:1px solid rgba(194,55,90,0.12);transition:all 0.3s;overflow:hidden;}
+.parfum-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(194,55,90,0.12);}
+.parfum-img{height:280px;background:linear-gradient(160deg,var(–rose-pale) 0%,var(–ivory) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.parfum-img img{width:100%;height:100%;object-fit:contain;padding:2rem;filter:drop-shadow(0 8px 24px rgba(194,55,90,0.18));}
+.parfum-img-placeholder{font-size:4rem;opacity:0.25;}
+.parfum-body{padding:1.5rem;}
+.parfum-name{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;font-weight:500;color:var(–dark);margin-bottom:0.3rem;}
+.parfum-house{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–rose-deep);margin-bottom:0.6rem;}
+.parfum-desc{font-size:0.82rem;color:var(–text-light);line-height:1.6;margin-bottom:1rem;}
+.parfum-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1rem;}
+.parfum-tag{background:#222;color:#C9A84C;font-size:0.62rem;letter-spacing:0.06em;padding:0.2rem 0.5rem;}
+
+/* CONTACT */
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.contact-card{background:#1a1a1a;border:1px solid rgba(194,55,90,0.12);padding:2.5rem;text-align:center;transition:all 0.3s;}
+.contact-card:hover{border-color:var(–rose-deep);box-shadow:0 12px 40px rgba(194,55,90,0.1);}
+.contact-icon{font-size:2.5rem;margin-bottom:1rem;}
+.contact-card-title{font-family:‘Cormorant Garamond’,serif;font-size:1.4rem;font-weight:400;color:var(–dark);margin-bottom:0.5rem;}
+.contact-card-text{font-size:0.85rem;color:var(–text-light);line-height:1.7;margin-bottom:0.8rem;}
+.contact-handle{font-size:0.78rem;color:var(–rose-deep);letter-spacing:0.05em;margin-top:0.5rem;}
+
+/* CATEGORY CARDS */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.cat-card{background:#1a1a1a;border:1px solid rgba(194,55,90,0.12);overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(194,55,90,0.12);border-color:var(–rose-deep);}
+.cat-card-img{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(–rose-pale) 0%,var(–ivory) 100%);position:relative;overflow:hidden;}
+.cat-card-img::before{content:’’;position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(194,55,90,0.08));}
+.cat-card-icon{font-size:3rem;opacity:0.35;}
+.cat-card-body{padding:1.5rem;}
+.cat-card-title{font-family:‘Cormorant Garamond’,serif;font-size:1.3rem;font-weight:400;color:var(–dark);margin-bottom:0.4rem;}
+.cat-card-text{font-size:0.82rem;color:var(–text-light);line-height:1.6;margin-bottom:1rem;}
+
+/* PRODUCT ROW */
+.prod-row{display:flex;gap:2rem;align-items:flex-start;padding:2rem;background:#1a1a1a;border:1px solid rgba(194,55,90,0.1);margin-bottom:1.2rem;transition:all 0.2s;}
+.prod-row:hover{border-color:var(–rose-deep);box-shadow:0 8px 28px rgba(194,55,90,0.08);}
+.prod-row-img{width:120px;height:120px;flex-shrink:0;background:linear-gradient(135deg,var(–rose-pale),var(–ivory));display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.prod-row-img img{width:100%;height:100%;object-fit:contain;padding:0.5rem;filter:drop-shadow(0 4px 12px rgba(194,55,90,0.15));}
+.prod-row-body{flex:1;}
+.prod-row-name{font-family:‘Cormorant Garamond’,serif;font-size:1.2rem;font-weight:400;color:var(–dark);margin-bottom:0.3rem;}
+.prod-row-text{font-size:0.85rem;color:var(–text-light);line-height:1.7;margin-bottom:0.6rem;}
+.prod-row-tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.8rem;}
+.prod-row-tag{background:#222;color:#C9A84C;font-size:0.62rem;padding:0.2rem 0.55rem;}
+
+/* ROUTINE BLOCKS */
+.routine-blocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:2rem;}
+.routine-block-card{background:#1a1a1a;border:1px solid rgba(194,55,90,0.12);padding:1.8rem;transition:all 0.3s;}
+.routine-block-card:hover{border-color:var(–rose-deep);box-shadow:0 8px 28px rgba(194,55,90,0.1);}
+.rb-title{font-family:‘Cormorant Garamond’,serif;font-size:1.15rem;color:var(–dark);margin-bottom:0.8rem;}
+.rb-steps{list-style:none;}
+.rb-steps li{font-size:0.83rem;color:var(–text);padding:0.35rem 0;padding-left:1.2rem;position:relative;border-bottom:1px solid rgba(194,55,90,0.08);}
+.rb-steps li::before{content:‘→’;position:absolute;left:0;color:var(–rose-deep);}
+
+/* CTA DARK */
+.cta-dark{background:var(–dark);padding:4rem 2rem;}
+.cta-dark-inner{max-width:900px;margin:0 auto;text-align:center;}
+
+/* SIMPLE SECTION */
+.simple-section{padding:2rem;max-width:1100px;margin:0 auto;}
+.simple-section p{font-size:0.9rem;color:#c0c0c0;line-height:1.9;margin-bottom:1rem;}
+
+/* TEST */
+.test-wrap{max-width:680px;margin:0 auto;padding:3rem 2rem;}
+.test-progress-wrap{margin-bottom:2.5rem;}
+.test-progress-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(–text-light);margin-bottom:0.6rem;display:flex;justify-content:space-between;}
+.test-progress-bar{height:2px;background:var(–ivory);border-radius:2px;overflow:hidden;}
+.test-progress-fill{height:100%;background:#C9A84C;transition:width 0.4s ease;}
+.test-question{font-family:‘Cormorant Garamond’,serif;font-size:1.5rem;font-weight:400;color:var(–dark);margin-bottom:2rem;line-height:1.4;}
+.test-options{display:flex;flex-direction:column;gap:0.8rem;}
+.test-option{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.2rem;border:1px solid rgba(201,168,76,0.2);cursor:pointer;transition:all 0.2s;background:#1a1a1a;}
+.test-option:hover{border-color:#C9A84C;background:#222;}
+.test-option.selected{border-color:#C9A84C;background:#222;}
+.test-option-letter{width:24px;height:24px;border:1px solid var(–rose);display:flex;align-items:center;justify-content:center;font-size:0.65rem;letter-spacing:0.05em;text-transform:uppercase;color:var(–rose-deep);flex-shrink:0;transition:all 0.2s;}
+.test-option.selected .test-option-letter{background:var(–rose-deep);color:white;border-color:var(–rose-deep);}
+.test-option-text{font-size:0.9rem;color:var(–text);line-height:1.5;padding-top:2px;}
+.test-nav{display:flex;gap:1rem;margin-top:2rem;align-items:center;}
+
+/* RESULT */
+.result-wrap{max-width:760px;margin:0 auto;padding:3rem 2rem;}
+.result-type-badge{display:inline-block;background:#1a1a1a;border:1px solid #C9A84C;padding:0.5rem 1.5rem;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(–rose-deep);margin-bottom:1rem;}
+.result-type{font-family:‘Cormorant Garamond’,serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:var(–dark);margin-bottom:1.5rem;}
+.result-desc{font-size:0.95rem;color:var(–mid);line-height:1.8;margin-bottom:2rem;max-width:560px;}
+.result-tips{list-style:none;margin-bottom:2rem;}
+.result-tips li{font-size:0.88rem;color:var(–text);padding:0.5rem 0;border-bottom:1px solid rgba(194,55,90,0.15);display:flex;align-items:center;gap:0.7rem;}
+.result-tips li::before{content:’—’;color:var(–rose-deep);flex-shrink:0;}
+.result-course-box{background:var(–dark);color:var(–cream);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
+.result-course-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(–rose);margin-bottom:0.3rem;}
+.result-course-name{font-family:‘Cormorant Garamond’,serif;font-size:1.3rem;font-weight:300;}
+.result-products{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem;}
+.result-product-tag{background:white;border:1px solid var(–rose);padding:0.35rem 0.8rem;font-size:0.72rem;color:var(–mid);}
+.result-btns{display:flex;gap:0.8rem;flex-wrap:wrap;}
+
+/* ACCESS */
+.access-wrap{max-width:480px;margin:0 auto;padding:3rem 2rem;text-align:center;}
+.access-lock{font-size:2rem;margin-bottom:1rem;color:var(–rose-deep);}
+.access-title{font-family:‘Cormorant Garamond’,serif;font-size:2rem;font-weight:300;color:var(–dark);margin-bottom:0.5rem;}
+.access-sub{font-size:0.88rem;color:var(–text-light);margin-bottom:2rem;}
+.access-input{width:100%;padding:0.9rem 1rem;border:1px solid rgba(201,168,76,0.4);background:#1a1a1a;color:#f0f0f0;outline:none;font-family:‘Jost’,sans-serif;font-size:1.1rem;letter-spacing:0.3em;text-align:center;color:var(–dark);margin-bottom:1rem;transition:border-color 0.2s;}
+.access-input:focus{border-color:var(–rose-deep);}
+.access-error{font-size:0.8rem;color:#c2375a;margin-bottom:1rem;display:none;}
+.access-error.show{display:block;}
+
+/* COURSE */
+.course-wrap{max-width:820px;margin:0 auto;padding:3rem 2rem;}
+.course-hero{background:linear-gradient(135deg,var(–ivory) 0%,var(–rose-pale) 100%);padding:2.5rem;margin-bottom:3rem;border-left:3px solid var(–rose-deep);}
+.course-hero-title{font-family:‘Cormorant Garamond’,serif;font-size:2rem;font-weight:400;color:var(–dark);margin-bottom:0.5rem;}
+.course-hero-sub{font-size:0.88rem;color:var(–mid);line-height:1.7;}
+.chapter{margin-bottom:3rem;}
+.chapter-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(194,55,90,0.15);}
+.chapter-num{font-family:‘Cormorant Garamond’,serif;font-size:3rem;font-weight:300;color:var(–rose);line-height:1;}
+.chapter-title{font-size:1.05rem;font-weight:500;color:var(–dark);letter-spacing:0.04em;}
+.chapter-body{font-size:0.9rem;color:var(–text);line-height:1.9;}
+.chapter-body p{margin-bottom:1rem;}
+.chapter-body ul{list-style:none;margin:1rem 0;}
+.chapter-body ul li{padding:0.35rem 0;padding-left:1.2rem;position:relative;}
+.chapter-body ul li::before{content:’—’;position:absolute;left:0;color:var(–rose-deep);}
+.accent-box{background:#1a1a1a;border-left:2px solid #C9A84C;padding:1rem 1.2rem;margin:1.5rem 0;font-style:italic;color:var(–mid);font-size:0.88rem;}
+.routine-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
+.routine-block{background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);padding:1.5rem;}
+.routine-block-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(–rose-deep);margin-bottom:1rem;}
+.routine-step{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:0.8rem;}
+.routine-step-num{width:22px;height:22px;background:#C9A84C;color:white;font-size:0.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.routine-step-text{font-size:0.85rem;color:var(–text);line-height:1.5;}
+.routine-step-product{font-size:0.75rem;color:var(–rose-deep);margin-top:0.2rem;}
+.products-sidebar{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(194,55,90,0.2);}
+.products-sidebar-title{font-family:‘Cormorant Garamond’,serif;font-size:1.4rem;font-weight:300;color:#C9A84C;margin-bottom:1.5rem;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+.product-card{background:#1a1a1a;padding:1.2rem;border:1px solid rgba(194,55,90,0.15);text-align:center;}
+.product-card-name{font-size:0.82rem;font-weight:500;color:var(–dark);margin-bottom:0.5rem;}
+.product-card-role{font-size:0.72rem;color:var(–text-light);margin-bottom:0.8rem;}
+.course-footer-btns{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(194,55,90,0.15);}
+
+/* ADMIN */
+.admin-wrap{max-width:1000px;margin:0 auto;padding:3rem 2rem;}
+.admin-pw-input{width:100%;padding:0.9rem 1rem;border:1px solid rgba(201,168,76,0.4);background:#1a1a1a;font-family:‘Jost’,sans-serif;font-size:0.9rem;color:var(–dark);margin-bottom:0.8rem;outline:none;transition:border-color 0.2s;}
+.admin-pw-input:focus{border-color:var(–rose-deep);}
+.admin-error{font-size:0.78rem;color:var(–rose-deep);margin-bottom:0.8rem;display:none;}
+.admin-error.show{display:block;}
+.admin-panel{display:none;}
+.admin-panel.show{display:block;}
+.admin-tabs{display:flex;gap:0;border-bottom:1px solid rgba(194,55,90,0.2);margin-bottom:2rem;flex-wrap:wrap;}
+.admin-tab{padding:0.7rem 1.2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–text-light);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none;font-family:‘Jost’,sans-serif;}
+.admin-tab:hover{color:var(–rose-deep);}
+.admin-tab.active{color:var(–rose-deep);border-bottom-color:var(–rose-deep);}
+.admin-section{display:none;}
+.admin-section.show{display:block;}
+.admin-field{margin-bottom:1.2rem;}
+.admin-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(–text-light);margin-bottom:0.4rem;display:block;}
+.admin-input,.admin-textarea{width:100%;padding:0.7rem 0.9rem;border:1px solid rgba(201,168,76,0.25);background:#1a1a1a;color:#f0f0f0;font-family:‘Jost’,sans-serif;font-size:0.88rem;color:var(–dark);outline:none;transition:border-color 0.2s;}
+.admin-textarea{resize:vertical;min-height:100px;}
+.admin-input:focus,.admin-textarea:focus{border-color:var(–rose-deep);}
+.admin-save-msg{font-size:0.78rem;color:#27ae60;margin-top:0.5rem;display:none;}
+.admin-save-msg.show{display:block;}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.admin-course-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:2rem;}
+.admin-course-btn{padding:0.8rem;border:1px solid rgba(194,55,90,0.2);background:white;cursor:pointer;font-family:‘Jost’,sans-serif;font-size:0.78rem;color:var(–mid);transition:all 0.2s;text-align:center;}
+.admin-course-btn:hover,.admin-course-btn.active{border-color:var(–rose-deep);background:var(–rose-pale);color:var(–rose-deep);}
+
+/* FOOTER */
+footer{background:#050505;color:var(–cream);padding:3rem 2rem 1.5rem;margin-top:4rem;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;margin-bottom:2rem;}
+.footer-brand{font-family:‘Cormorant Garamond’,serif;font-size:1.3rem;font-weight:400;color:#C9A84C;margin-bottom:0.5rem;}
+.footer-tagline{font-size:0.75rem;color:rgba(253,248,245,0.5);}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(253,248,245,0.6);text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.footer-links a:hover{color:var(–rose);}
+.footer-bottom{border-top:1px solid rgba(253,248,245,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:0.7rem;color:rgba(253,248,245,0.35);}
+.footer-secret{font-size:0.65rem;color:rgba(253,248,245,0.12);cursor:pointer;transition:color 0.3s;letter-spacing:0.1em;}
+.footer-secret:hover{color:rgba(253,248,245,0.45);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp 0.6s ease forwards;}
+.fade-up-2{animation:fadeUp 0.6s 0.15s ease forwards;opacity:0;}
+.fade-up-3{animation:fadeUp 0.6s 0.3s ease forwards;opacity:0;}
+
+/* RESPONSIVE */
+@media(max-width:900px){nav,.lang-switch,.btn-discover,.ig-link{display:none;}.hamburger{display:flex;}.hero-content{grid-template-columns:1fr;}.hero-visual{display:none;}.routine-grid{grid-template-columns:1fr;}.admin-grid{grid-template-columns:1fr;}.admin-course-selector{grid-template-columns:1fr 1fr;}.result-course-box{flex-direction:column;}}
+@media(max-width:600px){.test-wrap,.result-wrap,.course-wrap,.access-wrap,.admin-wrap{padding:2rem 1rem;}.page-header{padding-left:1rem;padding-right:1rem;}.prod-row{flex-direction:column;}.prod-row-img{width:100%;height:160px;}}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header id="main-header">
+  <div class="logo" onclick="showPage('home')">Annet<span>&</span>Beauty</div>
+  <nav>
+    <a onclick="showPage('home')">Acasă</a>
+    <a onclick="showPage('despre')">Despre</a>
+    <a onclick="showPage('produse')">Produse</a>
+    <a onclick="showPage('rutine')">Rutine</a>
+    <a onclick="showPage('test-intro')">Test Ten</a>
+    <a onclick="showPage('cursuri')">Cursuri</a>
+    <a onclick="showPage('parfumuri')">Parfumuri</a>
+    <a onclick="showPage('blog')">Blog</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-switch">
+      <button class="lang-btn active">RO</button>
+      <button class="lang-btn">UA</button>
+      <button class="lang-btn">EN</button>
+      <button class="lang-btn">FR</button>
+    </div>
+    <a href="https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==" target="_blank" class="ig-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <button class="btn-discover" onclick="showPage('test-intro')">Descoperă rutina ta</button>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a onclick="showPage('home');closeMenu()">Acasă</a>
+  <a onclick="showPage('despre');closeMenu()">Despre</a>
+  <a onclick="showPage('produse');closeMenu()">Produse</a>
+  <a onclick="showPage('rutine');closeMenu()">Rutine</a>
+  <a onclick="showPage('test-intro');closeMenu()">Test Ten</a>
+  <a onclick="showPage('cursuri');closeMenu()">Cursuri</a>
+  <a onclick="showPage('parfumuri');closeMenu()">Parfumuri</a>
+  <a onclick="showPage('blog');closeMenu()">Blog</a>
+  <a onclick="showPage('contact');closeMenu()">Contact</a>
+</div>
+
+<!-- ═══ HOME ═══ -->
+
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-orb"></div><div class="hero-orb"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow fade-up">Skincare · Cursuri · Rutine personalizate</div>
+        <h1 class="hero-h1 fade-up-2">Pielea ta <em>merită</em> o rutină bine aleasă.</h1>
+        <p class="hero-sub fade-up-3">Descoperă ce tip de ten ai, primește recomandări personalizate și accesează cursuri care te ajută să îți construiești o rutină corectă.</p>
+        <div class="hero-btns fade-up-3">
+          <button class="btn-primary" onclick="showPage('test-intro')">Test Ten</button>
+          <button class="btn-outline" onclick="showPage('cursuri')">Cursuri</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="prod-visual">
+          <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:0.8rem">Test gratuit · 1-2 minute</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--dark);margin-bottom:0.5rem">Află ce tip de ten ai</div>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.7;margin-bottom:1.5rem">10 întrebări. Rezultat clar. Rutină recomandată specific pentru tine.</p>
+          <button class="btn-primary" style="width:100%" onclick="showPage('test-intro')">Începe testul →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#111111">
+    <div class="section-inner">
+      <span class="section-label">De ce Annet&Beauty</span>
+      <h2 class="section-title">O abordare simplă, rezultate reale.</h2>
+      <div class="cards-grid">
+        <div class="card"><div class="card-num">01</div><div class="card-title">Test personalizat</div><p class="card-text">Un singur test de 10 întrebări care descoperă tipul tău de ten.</p></div>
+        <div class="card"><div class="card-num">02</div><div class="card-title">6 cursuri complete</div><p class="card-text">Cursuri dedicate fiecărui tip de ten, cu rutine și produse CeraVe.</p></div>
+        <div class="card"><div class="card-num">03</div><div class="card-title">Produse CeraVe</div><p class="card-text">Recomandări concrete și accesibile pentru fiecare tip de piele.</p></div>
+        <div class="card"><div class="card-num">04</div><div class="card-title">Contact direct</div><p class="card-text">Instagram sau telefon pentru recomandare personală.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-dark">
+    <div class="cta-dark-inner">
+      <span class="section-label" style="color:var(--rose)">Pasul 1</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;color:var(--cream);margin-bottom:1rem">Nu știi de unde să începi?</h2>
+      <p style="font-size:0.9rem;color:rgba(253,248,245,0.6);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto">Testul de ten îți arată în câteva minute ce tip de piele ai.</p>
+      <button class="btn-primary" onclick="showPage('test-intro')">Începe testul gratuit</button>
+    </div>
+  </section>
+
+  <footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand">Annet&Beauty</div><div class="footer-tagline">Skincare · Cursuri · Rutine personalizate</div></div><div class="footer-links"><a onclick="showPage('test-intro')">Test Ten</a><a onclick="showPage('cursuri')">Cursuri</a><a onclick="showPage('produse')">Produse</a><a onclick="showPage('contact')">Contact</a></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty · Toate drepturile rezervate</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ DESPRE ═══ -->
+
+<div class="page" id="page-despre">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Despre</span><h1 class="page-title">Annet&Beauty</h1><p class="page-sub">Pasiune pentru skincare, rutine simple și produse care funcționează cu adevărat.</p></div></div>
+  <div class="simple-section"><p>Bine ai venit la Annet&Beauty. Sunt Anet, și cred că fiecare persoană merită o rutină de îngrijire simplă, bine aleasă și ușor de urmat.</p><p>Misiunea mea este să te ajut să înțelegi mai bine ce tip de ten ai, ce produse ți se potrivesc și cum să îți construiești o rutină care funcționează.</p><div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap"><button class="btn-primary" onclick="showPage('test-intro')">Fă testul de ten</button><button class="btn-outline" onclick="showPage('contact')">Contactează-mă</button></div></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ PRODUSE ═══ -->
+
+<div class="page" id="page-produse">
+  <!-- HERO produse -->
+  <div style="padding-top:64px;background:linear-gradient(160deg,#1a1518 0%,#0a0a0a 100%);padding-bottom:3rem;">
+    <div style="max-width:1100px;margin:0 auto;padding:3rem 2rem 0;">
+      <div class="back-link" onclick="showPage('home')">← Înapoi la Home</div>
+      <span class="page-eyebrow">Produse</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:1rem;max-width:700px;line-height:1.15">Produse recomandate pentru o rutină curată, feminină și bine aleasă</h1>
+      <p style="font-size:0.92rem;color:var(--text-light);line-height:1.8;max-width:580px;margin-bottom:1.5rem">Descoperă selecția mea de produse pentru îngrijirea feței, hidratare, curățare, confort și aspect îngrijit al pielii.</p>
+      <p style="font-size:0.85rem;color:var(--mid);line-height:1.8;max-width:560px;margin-bottom:2rem">Produse alese pentru diferite tipuri de ten, nevoi și obiective de îngrijire.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <button class="btn-primary" onclick="document.getElementById('prod-categories').scrollIntoView({behavior:'smooth'})">Vezi toate produsele</button>
+        <button class="btn-outline" onclick="showPage('test-intro')">Descoperă rutina ta</button>
+        <button class="btn-ghost" onclick="showPage('home')">Înapoi acasă</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 CATEGORII -->
+
+  <div id="prod-categories" style="padding:3rem 2rem;max-width:1100px;margin:0 auto;">
+    <span class="section-label">Categorii</span>
+    <h2 class="section-title">Alege categoria potrivită pentru pielea ta</h2>
+    <p class="section-sub">Apasă pe categoria care te interesează și vezi produsele recomandate.</p>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="showProdSubpage('creme')">
+        <div class="cat-card-img"><div class="cat-card-icon">🧴</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">Creme hidratante</div><p class="cat-card-text">Produse pentru confort, hidratare și susținerea rutinei zilnice.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+      <div class="cat-card" onclick="showProdSubpage('curatare')">
+        <div class="cat-card-img"><div class="cat-card-icon">✨</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">Curățare</div><p class="cat-card-text">Produse care curăță pielea și susțin o rutină bine începută.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+      <div class="cat-card" onclick="showProdSubpage('seruri')">
+        <div class="cat-card-img"><div class="cat-card-icon">💧</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">Seruri</div><p class="cat-card-text">Pași de susținere pentru hidratare și aspect mai îngrijit.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+      <div class="cat-card" onclick="showProdSubpage('spf')">
+        <div class="cat-card-img"><div class="cat-card-icon">☀️</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">SPF și protecție</div><p class="cat-card-text">Protecția zilnică care completează o rutină bună.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+      <div class="cat-card" onclick="showProdSubpage('rutine')">
+        <div class="cat-card-img"><div class="cat-card-icon">🌿</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">Rutine complete</div><p class="cat-card-text">Seturi complete de produse pentru dimineață și seară.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+      <div class="cat-card" onclick="showProdSubpage('favorite')">
+        <div class="cat-card-img"><div class="cat-card-icon">⭐</div></div>
+        <div class="cat-card-body"><div class="cat-card-title">Favoritele mele</div><p class="cat-card-text">Selecția mea personală pentru o rutină curată și feminină.</p><button class="btn-primary">Vezi categoria</button></div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ PROD SUBPAGE ═══ -->
+
+<div class="page" id="page-prod-sub">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('produse')">← Înapoi la Produse</div><span class="page-eyebrow" id="prod-sub-eyebrow">Categorie</span><h1 class="page-title" id="prod-sub-title">Produse</h1><p class="page-sub" id="prod-sub-sub"></p></div></div>
+  <div class="simple-section"><div id="prod-sub-content"></div><div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem"><button class="btn-outline" onclick="showPage('produse')">← Înapoi la Produse</button><button class="btn-ghost" onclick="showPage('home')">Acasă</button></div></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ PRODUS INDIVIDUAL ═══ -->
+
+<div class="page" id="page-produs">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" id="produs-back" onclick="showPage('prod-sub')">← Înapoi la Produse</div><span class="page-eyebrow">Produs</span><h1 class="page-title" id="produs-title"></h1><p class="page-sub" id="produs-sub"></p></div></div>
+  <div class="simple-section" id="produs-content"></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ RUTINE ═══ -->
+
+<div class="page" id="page-rutine">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Rutine</span><h1 class="page-title">Rutine de îngrijire</h1><p class="page-sub">Structura de bază pentru o rutină simplă și eficientă.</p></div></div>
+  <div class="simple-section"><p>O rutină bună nu trebuie să fie complicată. Câteva produse bine alese și consecvență zilnică fac diferența.</p><div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap"><button class="btn-primary" onclick="showPage('test-intro')">Fă testul de ten</button><button class="btn-outline" onclick="showPage('cursuri')">Vezi cursurile</button></div></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ TEST INTRO ═══ -->
+
+<div class="page" id="page-test-intro">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Test Ten</span><h1 class="page-title">Află ce tip de ten ai</h1><p class="page-sub">Pielea fiecărei persoane are nevoi diferite. Acest test te ajută să înțelegi mai bine tipul tău de ten și ce îngrijire ți se potrivește.</p></div></div>
+  <div class="test-wrap">
+    <div style="display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:wrap">
+      <div style="text-align:center;padding:1rem 1.5rem;background:white;border:1px solid rgba(194,55,90,0.15)"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rose-deep)">1–2</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light)">minute</div></div>
+      <div style="text-align:center;padding:1rem 1.5rem;background:white;border:1px solid rgba(194,55,90,0.15)"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rose-deep)">10</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light)">întrebări</div></div>
+      <div style="text-align:center;padding:1rem 1.5rem;background:white;border:1px solid rgba(194,55,90,0.15)"><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--rose-deep)">6</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light)">rezultate posibile</div></div>
+    </div>
+    <p style="font-size:0.9rem;color:var(--mid);line-height:1.8;margin-bottom:2rem">Alege varianta care se potrivește cel mai bine pielii tale. La final vei afla ce tip de ten ai și ce curs ți se recomandă.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <button class="btn-primary" onclick="startTest()">Începe testul</button>
+      <button class="btn-ghost" onclick="showPage('home')">Înapoi la Home</button>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ TEST ═══ -->
+
+<div class="page" id="page-test">
+  <div class="page-header" style="padding-bottom:1rem"><div class="page-header-inner"><div class="back-link" onclick="showPage('test-intro')">← Înapoi la Test Ten</div><span class="page-eyebrow">Test Ten</span><h1 class="page-title" style="font-size:1.8rem">Răspunde la cele 10 întrebări</h1></div></div>
+  <div class="test-wrap">
+    <div class="test-progress-wrap">
+      <div class="test-progress-label"><span id="test-q-label">Întrebarea 1 din 10</span><span id="test-q-pct">0%</span></div>
+      <div class="test-progress-bar"><div class="test-progress-fill" id="test-progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="test-question" id="test-question-text"></div>
+    <div class="test-options" id="test-options"></div>
+    <div class="test-nav">
+      <button class="btn-ghost" id="test-prev-btn" onclick="testPrev()" style="display:none">← Înapoi</button>
+      <button class="btn-primary" id="test-next-btn" onclick="testNext()">Continuă →</button>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ RESULT ═══ -->
+
+<div class="page" id="page-result">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('test-intro')">← Înapoi la Test Ten</div><span class="page-eyebrow">Rezultatul tău</span><h1 class="page-title">Pe baza răspunsurilor tale, tipul tău de ten este:</h1></div></div>
+  <div class="result-wrap" id="result-content"></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ CURSURI ═══ -->
+
+<div class="page" id="page-cursuri">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Cursuri</span><h1 class="page-title">Cursuri de îngrijire</h1><p class="page-sub">Alege cursul potrivit pentru tipul tău de ten și învață ce produse și ce rutină ți se potrivesc.</p></div></div>
+  <div class="simple-section"><div class="cards-grid" id="cursuri-grid"></div></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ CURS ACCESS ═══ -->
+
+<div class="page" id="page-curs-access">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('cursuri')">← Înapoi la Cursuri</div><span class="page-eyebrow">Acces curs</span><h1 class="page-title" id="access-curs-title">Curs</h1></div></div>
+  <div class="access-wrap">
+    <div class="access-lock">🔒</div>
+    <div class="access-title">Introdu codul de acces</div>
+    <p class="access-sub">Introdu codul de 6 cifre pentru a accesa cursul complet.</p>
+    <input type="text" class="access-input" id="access-code-input" maxlength="6" placeholder="000000" oninput="this.value=this.value.replace(/\D/g,'')">
+    <div class="access-error" id="access-error">Cod invalid. Verifică și încearcă din nou.</div>
+    <button class="btn-primary" style="width:100%;margin-bottom:1rem" onclick="checkCursCode()">Deschide cursul</button>
+    <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap">
+      <button class="btn-ghost" onclick="showPage('cursuri')">Înapoi la cursuri</button>
+      <button class="btn-ghost" onclick="showPage('home')">Acasă</button>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ CURS CONTENT ═══ -->
+
+<div class="page" id="page-curs-content">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('cursuri')">← Înapoi la Cursuri</div><span class="page-eyebrow">Curs complet</span><h1 class="page-title" id="content-curs-title">Curs</h1></div></div>
+  <div class="course-wrap" id="curs-content-body"></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ PARFUMURI ═══ -->
+
+<div class="page" id="page-parfumuri">
+  <div style="padding-top:64px;background:linear-gradient(160deg,#1a1518 0%,#0a0a0a 100%);padding-bottom:3rem;">
+    <div style="max-width:1100px;margin:0 auto;padding:3rem 2rem 0;">
+      <div class="back-link" onclick="showPage('home')">← Înapoi la Home</div>
+      <span class="page-eyebrow">Parfumuri</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:1rem;max-width:700px;line-height:1.15">Parfumuri apreciate, feminine și memorabile</h1>
+      <p style="font-size:0.92rem;color:var(--text-light);line-height:1.8;max-width:600px;margin-bottom:0.8rem">O selecție de parfumuri elegante, moderne și iubite în 2025–2026.</p>
+      <p style="font-size:0.85rem;color:var(--mid);line-height:1.8;max-width:560px;margin-bottom:2rem">Parfumuri care au atras atenția prin stil, persistență, eleganță și feminitate. Selecția este făcută pentru femei care vor să miroasă curat, rafinat și bine ales.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <button class="btn-primary" onclick="document.getElementById('parfum-grid').scrollIntoView({behavior:'smooth'})">Vezi parfumurile</button>
+        <button class="btn-ghost" onclick="showPage('home')">Înapoi acasă</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="parfum-grid" style="padding:3rem 2rem;max-width:1100px;margin:0 auto;">
+    <span class="section-label">Selecție 2025–2026</span>
+    <h2 class="section-title">Cele mai apreciate parfumuri feminine</h2>
+    <p class="section-sub" style="margin-bottom:2.5rem">Selecții elegante, feminine și actuale.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem" id="parfumuri-list"></div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ PARFUM INDIVIDUAL ═══ -->
+
+<div class="page" id="page-parfum">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('parfumuri')">← Înapoi la Parfumuri</div><span class="page-eyebrow">Parfum</span><h1 class="page-title" id="parfum-title"></h1><p class="page-sub" id="parfum-sub"></p></div></div>
+  <div class="simple-section" id="parfum-content"></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ BLOG ═══ -->
+
+<div class="page" id="page-blog">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Blog</span><h1 class="page-title">Articole & sfaturi</h1></div></div>
+  <div class="simple-section"><p>Secțiunea de blog este în curs de actualizare. Urmărește-mă pe Instagram.</p><div style="margin-top:1.5rem"><button class="btn-primary" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Instagram</button></div></div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+
+<div class="page" id="page-contact">
+  <div style="padding-top:64px;background:linear-gradient(160deg,#1a1518 0%,#0a0a0a 100%);padding-bottom:3rem;">
+    <div style="max-width:900px;margin:0 auto;padding:3rem 2rem 0;">
+      <div class="back-link" onclick="showPage('home')">← Înapoi la Home</div>
+      <span class="page-eyebrow">Contact</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:1rem;line-height:1.15">Hai să vorbim despre produse, rutină și recomandări</h1>
+      <p style="font-size:0.92rem;color:var(--text-light);line-height:1.8;max-width:580px">Dacă vrei să afli ce produse ți s-ar potrivi sau vrei să mă contactezi pentru recomandări, mă găsești aici.</p>
+    </div>
+  </div>
+
+  <div style="padding:3rem 2rem;max-width:900px;margin:0 auto;">
+    <span class="section-label">Contact rapid</span>
+    <div class="contact-cards">
+      <!-- INSTAGRAM -->
+      <div class="contact-card">
+        <div class="contact-icon">📸</div>
+        <div class="contact-card-title">Instagram</div>
+        <p class="contact-card-text">Scrie-mi direct pe Instagram pentru întrebări, recomandări și produse. Cel mai rapid mod de a mă contacta.</p>
+        <button class="btn-primary" style="width:100%;margin-bottom:0.8rem" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Deschide Instagram</button>
+        <div class="contact-handle">@anet_balan</div>
+      </div>
+      <!-- TELEFON -->
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div class="contact-card-title">Telefon</div>
+        <p class="contact-card-text">Mă poți contacta direct și telefonic sau pe WhatsApp pentru orice întrebare sau recomandare.</p>
+        <button class="btn-primary" style="width:100%;margin-bottom:0.8rem" onclick="window.open('tel:+32467852860')">Sună acum</button>
+        <div class="contact-handle">+32 467 85 28 60</div>
+      </div>
+      <!-- COLABORARI -->
+      <div class="contact-card">
+        <div class="contact-icon">🤝</div>
+        <div class="contact-card-title">Colaborări</div>
+        <p class="contact-card-text">Pentru colaborări, propuneri și parteneriate, mă poți contacta direct pe Instagram sau telefon.</p>
+        <button class="btn-outline" style="width:100%" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Trimite mesaj</button>
+      </div>
+    </div>
+
+```
+<div style="background:var(--dark);padding:2.5rem;margin-top:3rem;text-align:center;">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--rose);margin-bottom:0.8rem">Annet&Beauty</div>
+  <p style="font-size:0.88rem;color:rgba(253,248,245,0.65);line-height:1.8;max-width:500px;margin:0 auto 2rem">Skincare, frumusețe, rutină, produse alese cu grijă și recomandări feminine într-un spațiu curat, modern și premium.</p>
+  <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap">
+    <button class="btn-primary" onclick="showPage('home')">Înapoi Acasă</button>
+    <button class="btn-ghost" style="border-color:rgba(240,184,200,0.4);color:var(--cream)" onclick="showPage('produse')">Produse</button>
+    <button class="btn-ghost" style="border-color:rgba(240,184,200,0.4);color:var(--cream)" onclick="showPage('rutine')">Rutine</button>
+    <button class="btn-ghost" style="border-color:rgba(240,184,200,0.4);color:var(--cream)" onclick="showPage('cursuri')">Cursuri</button>
+  </div>
+</div>
+```
+
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div><div class="footer-secret" onclick="showPage('admin')">Testgvx</div></div></div></footer>
+</div>
+
+<!-- ═══ ADMIN ═══ -->
+
+<div class="page" id="page-admin">
+  <div class="page-header"><div class="page-header-inner"><div class="back-link" onclick="showPage('home')">← Înapoi la Home</div><span class="page-eyebrow">Admin</span><h1 class="page-title">Testgvx</h1><p class="page-sub">Panou intern de actualizare conținut</p></div></div>
+  <div class="admin-wrap">
+    <div id="admin-login-form" style="max-width:400px;margin:2rem auto;text-align:center;">
+      <div style="font-size:2rem;margin-bottom:0.5rem">🔐</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--dark);margin-bottom:0.5rem">Acces restricționat</div>
+      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1.5rem">Introdu parola pentru a accesa panoul de administrare.</p>
+      <input type="password" class="admin-pw-input" id="admin-pw" placeholder="Parolă" onkeydown="if(event.key==='Enter')checkAdminPw()">
+      <div class="admin-error" id="admin-error">Parolă incorectă.</div>
+      <button class="btn-primary" style="width:100%" onclick="checkAdminPw()">Intră în panou</button>
+    </div>
+    <div class="admin-panel" id="admin-panel">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="showAdminTab('test',this)">A. Test Ten</button>
+        <button class="admin-tab" onclick="showAdminTab('cursuri',this)">B. Cursuri</button>
+        <button class="admin-tab" onclick="showAdminTab('setari',this)">C. Setări acces</button>
+      </div>
+      <div class="admin-section show" id="admin-test">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);margin-bottom:1.5rem">Editare Test Ten</h3>
+        <div id="admin-test-fields"></div>
+        <button class="btn-primary" onclick="saveAdminTest()">Salvează</button>
+        <div class="admin-save-msg" id="save-msg-test">✓ Salvat cu succes</div>
+      </div>
+      <div class="admin-section" id="admin-cursuri">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);margin-bottom:1.5rem">Editare Cursuri</h3>
+        <div class="admin-course-selector" id="admin-course-selector"></div>
+        <div id="admin-curs-fields"></div>
+        <button class="btn-primary" onclick="saveAdminCurs()">Salvează</button>
+        <div class="admin-save-msg" id="save-msg-curs">✓ Salvat cu succes</div>
+      </div>
+      <div class="admin-section" id="admin-setari">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);margin-bottom:1.5rem">Setări Acces</h3>
+        <div id="admin-codes-fields"></div>
+        <div class="admin-field" style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(194,55,90,0.15)">
+          <label class="admin-label">Parolă admin nouă (lasă gol dacă nu vrei să schimbi)</label>
+          <input type="text" class="admin-input" id="set-admin-pw" placeholder="cafetka30">
+        </div>
+        <button class="btn-primary" onclick="saveAdminSetari()">Salvează</button>
+        <div class="admin-save-msg" id="save-msg-setari">✓ Salvat cu succes</div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">© 2025 Annet&Beauty</div></div></div></footer>
+</div>
+
+<script>
+// ══ DATA ══
+const DEFAULTS = {
+  adminPw:'cafetka30',
+  courses:[
+    {id:1,name:'Curs 1. Ten uscat',short:'Un ghid clar despre cum îți hidratezi corect pielea și alegi o rutină care oferă confort.',code:'741258',tip:'Ten uscat',intro:'Tenul uscat are nevoie de mai mult decât o simplă cremă. Are nevoie de o rutină bine aleasă, de produse blânde și de consecvență.',cap1:'Tenul uscat produce mai puțin sebum decât are nevoie pentru a menține confortul natural al pielii. Pielea poate pierde apă mai ușor și se poate simți mai rigidă, mai ternă sau mai inconfortabilă.',cap2:'Semne frecvente:\n• pielea se simte strânsă după spălare\n• ai zone care se usucă repede\n• machiajul nu se așază uniform\n• crema intră repede în piele\n• pielea pare mai ternă\n• în sezonul rece disconfortul crește',cap3:'Greșeli frecvente:\n1. Curățare prea agresivă\n2. Spălare prea frecventă\n3. Lipsa unei creme potrivite\n4. Lipsa SPF-ului\n5. Prea multe produse în același timp',products:'CeraVe Hydrating Cleanser\nCeraVe Moisturising Cream\nSPF zilnic\nSerum hidratant'},
+    {id:2,name:'Curs 2. Ten mixt',short:'Un ghid clar despre cum îți echilibrezi pielea și construiești o rutină care funcționează.',code:'918237',tip:'Ten mixt',intro:'Tenul mixt este unul dintre cele mai întâlnite tipuri de piele, dar și unul dintre cele mai greșit îngrijite.',cap1:'Tenul mixt combină două comportamente diferite pe față. Zona T produce mai mult sebum, obrajii pot rămâne mai normale sau mai uscate.',cap2:'Semne frecvente:\n• fruntea și nasul lucesc mai repede\n• porii sunt mai vizibili în zona T\n• obrajii nu se simt la fel de grași\n• unele produse sunt bune pe o zonă, dar prea grele pe alta',cap3:'Greșeli frecvente:\n1. Curățare prea agresivă\n2. Lipsa hidratării\n3. Creme prea grele pe toată fața\n4. Produse nepotrivite\n5. Schimbarea prea frecventă a produselor',products:'CeraVe Foaming Cleanser\nCeraVe Facial Moisturising Lotion\nSPF zilnic\nSerum lejer'},
+    {id:3,name:'Curs 3. Ten gras',short:'Un ghid clar despre cum îți organizezi rutina și menții pielea mai curată și echilibrată.',code:'192873',tip:'Ten gras',intro:'Tenul gras este adesea tratat prea dur. Are nevoie de o rutină curată, logică și bine aleasă.',cap1:'Tenul gras produce mai mult sebum. Pielea poate deveni mai lucioasă, porii pot fi mai vizibili, iar uneori pot apărea coșuri sau puncte negre.',cap2:'Semne frecvente:\n• pielea lucește la puțin timp după curățare\n• porii sunt mai vizibili\n• machiajul rezistă mai puțin\n• unele creme par prea grele\n• apar mai des puncte negre sau mici imperfecțiuni',cap3:'Greșeli frecvente:\n1. Curățare prea dură\n2. Lipsa hidratării\n3. Prea multe produse active\n4. Produse prea grele\n5. Schimbarea prea frecventă a rutinei',products:'CeraVe Foaming Cleanser\nCeraVe Facial Moisturising Lotion\nSPF zilnic\nSerum lejer'},
+    {id:4,name:'Curs 4. Ten sensibil',short:'Un ghid clar despre cum îți calmezi pielea și organizezi o rutină blândă.',code:'936511',tip:'Ten sensibil',intro:'Tenul sensibil nu are nevoie de o rutină încărcată. Are nevoie de liniște, logică și produse bine alese.',cap1:'Tenul sensibil reacționează mai ușor la produse, temperatură, frecare sau schimbări din mediu. Uneori pielea se poate înroși, poate ustura sau deveni inconfortabilă.',cap2:'Semne frecvente:\n• pielea se înroșește ușor\n• unele produse ustură sau pișcă\n• pielea se simte inconfortabil după spălare\n• reacționezi la schimbări de temperatură\n• pielea pare mai fragilă',cap3:'Greșeli frecvente:\n1. Prea multe produse odată\n2. Produse prea puternice\n3. Curățare agresivă\n4. Schimbarea produselor prea des\n5. Lipsa SPF-ului',products:'CeraVe Hydrating Cleanser\nCeraVe Moisturising Cream\nSPF zilnic\nSerum calmant'},
+    {id:5,name:'Curs 5. Ten normal',short:'Un ghid clar pentru menținerea echilibrului și construirea unei rutine simple și eficiente.',code:'874522',tip:'Ten normal',intro:'Pielea normală este echilibrată, dar are nevoie de rutină constantă pentru a rămâne în această zonă.',cap1:'Tenul normal produce sebum în cantități echilibrate. Pielea nu este nici prea uscată, nici prea grasă, și reacționează bine la produse.',cap2:'Semne frecvente:\n• pielea arată echilibrat\n• nu are probleme majore\n• porii sunt puțin vizibili\n• reacționezi bine la produse noi\n• nu ai o problemă clară',cap3:'Greșeli frecvente:\n1. Lipsa consecvenței în rutină\n2. Săritul peste SPF\n3. Schimbarea prea frecventă a produselor\n4. Ignorarea hidratării\n5. Prea multe produse active deodată',products:'CeraVe Hydrating Cleanser\nCeraVe Facial Moisturising Lotion\nSPF zilnic\nSerum hidratant'},
+    {id:6,name:'Curs 6. Ten matur',short:'Un ghid clar despre cum îți susții pielea în timp cu o rutină elegantă și constantă.',code:'998877',tip:'Ten matur',intro:'Pe măsură ce trece timpul, pielea își schimbă nevoile. Un ten matur are nevoie de o rutină bine construită și adaptată.',cap1:'Tenul matur îți schimbă textura, nivelul de confort și elasticitatea. Pot apărea linii fine, riduri mai vizibile și pierderea elasticității.',cap2:'Semne frecvente:\n• linii fine în jurul ochilor sau gurii\n• piele care pare mai puțin elastică\n• senzație de piele care are nevoie de mai mult confort\n• aspect mai tern\n• machiaj care nu se mai așază la fel',cap3:'Greșeli frecvente:\n1. Lipsa cremei potrivite\n2. Curățare prea agresivă\n3. Lipsa SPF-ului\n4. Prea multe produse fără logică\n5. Lipsa consecvenței',products:'CeraVe Hydrating Cleanser\nCeraVe Moisturising Cream\nCeraVe Facial Moisturising Lotion\nSPF zilnic\nSerum recomandat'}
+  ],
+  testQuestions:[
+    {q:'Cum se simte pielea ta după ce te speli pe față?',opts:['Se simte strânsă și uscată','Se simte curată, dar după puțin timp lucește','Se simte grasă repede','Se înroșește sau ustură ușor','Se simte normal și confortabil','Se simte uscată și mai lipsită de elasticitate']},
+    {q:'Cum arată pielea ta la 2-3 ore după curățare, fără cremă?',opts:['Pare uscată sau ternă','Lucește pe frunte și nas','Lucește pe toată fața','Pare sensibilă sau iritată','Arată echilibrat','Pare obosită și mai puțin fermă']},
+    {q:'Ai pori mai vizibili?',opts:['Nu prea','Da, mai ales pe nas și frunte','Da, pe mai multe zone ale feței','Nu asta mă deranjează','Puțin, dar nu mult','Nu e principala mea problemă']},
+    {q:'Cum reacționează pielea ta la produse noi?',opts:['Uneori devine mai uscată','Uneori face mici imperfecțiuni','Se îngrașă mai repede','Se irită ușor','Se adaptează bine','Pare mai încărcată sau inconfortabilă']},
+    {q:'Ce problemă observi cel mai des?',opts:['Deshidratare și senzație de piele care ține','Luciu în zona T','Exces de sebum și coșuri','Roșeață sau disconfort','Nu am o problemă clară','Riduri, linii fine sau piele mai ternă']},
+    {q:'Cum se simte crema ta actuală pe piele?',opts:['Intră repede și parcă mai am nevoie','Uneori e bună, alteori prea mult în anumite zone','Pare prea grea și îmi încarcă pielea','Uneori mă ustură sau mă deranjează','Se simte bine','Parcă nu mai este suficientă pentru nevoile pielii mele']},
+    {q:'Cum arată pielea ta iarna?',opts:['Devine mai uscată','Unele zone sunt uscate, altele lucioase','Tot grasă sau predispusă la coșuri','Mai sensibilă decât de obicei','Relativ la fel','Mai uscată și mai lipsită de confort']},
+    {q:'Folosești produse hidratante în mod regulat?',opts:['Da, și simt că am nevoie','Da, dar doar pe anumite zone','Uneori evit pentru că simt pielea încărcată','Da, dar aleg cu grijă','Da, ocazional','Da, și caut produse mai hrănitoare']},
+    {q:'Cum ai descrie aspectul pielii tale?',opts:['Mată și deshidratată','Luciu în unele zone, normală în altele','Lucioasă și încărcată','Fină, dar reactivă','Curată și echilibrată','Mai subțire, ternă sau cu linii vizibile']},
+    {q:'Ce ți-ai dori cel mai mult să îmbunătățești?',opts:['Hidratarea','Echilibrul pielii','Sebumul și imperfecțiunile','Sensibilitatea și confortul','Menținerea unei rutine bune','Aspectul liniilor fine și confortul pielii']}
+  ]
+};
+
+// ══ PARFUMURI DATA ══
+const PARFUMURI = [
+  {name:'Baccarat Rouge 540',house:'Maison Francis Kurkdjian',short:'Elegant, rafinat, memorabil.',desc:'Un parfum iconic care combină notele de iasomie, șofran, cedru și ambroxan. Intensitate memorabilă, purtată de femei sofisticate.',tip:'Floral-ambrată',cand:'Seară · Evenimente · Ocazii speciale',style:'Lux · Feminitate · Prezență',img:'https://images.squarespace-cdn.com/content/v1/5e71f9b8a37ccd2f2c2dd99d/1629123895036-NHIJSQ4MJMNCN63S7NWL/MFK+Baccarat+Rouge+540+EDP+70ml.jpg',tags:['Premium','Floral','Ambrată','Seară']},
+  {name:'Libre Intense',house:'Yves Saint Laurent',short:'Feminin, puternic și modern.',desc:'O versiune mai intensă a clasicului Libre. Note de lavandă, flori de portocal și vanilie îmbinate într-o semnătură feminină contemporană.',tip:'Floral-chypre',cand:'Zi · Seară · Birou',style:'Modern · Independent · Îndrăzneț',img:'https://www.yslbeauty.com/on/demandware.static/-/Sites-YSLBeauty-Library/default/dwd0f1c07a/FRAGRANCE/LIBRE/libre-intense-pdp-hero.jpg',tags:['Modern','Feminin','Intens','Versatil']},
+  {name:'Miss Dior Blooming Bouquet',house:'Christian Dior',short:'Romantic, curat și elegant.',desc:'Un buchet floral delicat cu note de trandafir, bujor și musc alb. Femininitate pură și romantism clasic.',tip:'Florală',cand:'Zi · Primăvară · Vară',style:'Romantic · Pur · Elegant',img:'https://www.dior.com/beauty/version-5/medias/nuxeo/nw/en_US/Images/Dior-Beauty-NAM/Fragrance/Miss-Dior/3348901484633-primary.jpg',tags:['Floral','Romantic','Ușor','Zi']},
+  {name:'Valentino Donna Born in Roma',house:'Valentino',short:'Fashion, feminin și actual.',desc:'Un parfum care capturează spiritul Romei cu note de iasomie de Italia, bourbon și ylang-ylang. Modern și sofisticat.',tip:'Floral-lemnoasă',cand:'Zi și seară',style:'Fashion · Urban · Sofisticat',img:'https://www.valentino.com/images/cache/valentino_beauty_product_550/valentino/beauty/fragrance/donna-born-in-roma-eau-de-parfum-1688369.jpg',tags:['Fashion','Feminin','Modern','Sofisticat']},
+  {name:'Black Opium',house:'Yves Saint Laurent',short:'Seductiv, modern și recognoscibil.',desc:'O combinație îndrăzneață de cafea neagră, vanilie și iasomie albă. Parfum care lasă o impresie puternică și memorabilă.',tip:'Orientală-florală',cand:'Seară · Club · Toamnă · Iarnă',style:'Seductiv · Bold · Glam',img:'https://www.yslbeauty.com/on/demandware.static/-/Sites-YSLBeauty-Library/default/dw4d5a23b5/FRAGRANCE/BLACK-OPIUM/black-opium-edp-hero-1.jpg',tags:['Seductiv','Seară','Oriental','Glam']},
+  {name:'Coco Mademoiselle',house:'Chanel',short:'Clasic feminin cu aer luxos.',desc:'Un clasic absolut. Note de portocal, trandafir, ylang-ylang și patchouli care definesc feminitatea elegantă și rafinată.',tip:'Orientală-florală',cand:'Oricând · Etern',style:'Clasic · Luxos · Rafinat',img:'https://www.chanel.com/images//t_one//w_0.5,h_0.5//q_auto:best//fragrance-coco-mademoiselle-eau-de-parfum-vaporisateur-spray-100ml-packshot-default-104520-8835726475294.jpg',tags:['Clasic','Luxos','Iconic','Feminin']},
+  {name:'Armani Sì',house:'Giorgio Armani',short:'Elegant, fin și ușor de purtat.',desc:'O reconciliere perfectă între tradițional și modern. Notele de cassis, trandafir și vanilie creează un parfum cald și accesibil.',tip:'Florală-chypre',cand:'Zi · Seară · Toate anotimpurile',style:'Elegant · Feminin · Accesibil',img:'https://www.giorgioarmanibeauty.com/medias/ARB9RMAQZF-Beauty-Fragrance-Si-EDP-100ml.jpg',tags:['Elegant','Fin','Versatil','Feminin']},
+  {name:'La Vie Est Belle',house:'Lancôme',short:'Feminin, dulce și popular.',desc:'Un imn al feminității cu iris, pralinà și patchouli. Parfum cald, optimist și iubit de femei din toată lumea.',tip:'Gourmand-florală',cand:'Zi · Seară · Toamnă',style:'Optimist · Cald · Jovial',img:'https://www.lancome.com/-/media/lancome/product-images/fragrance/la-vie-est-belle/la-vie-est-belle-eau-de-parfum/la-vie-est-belle-edp-50ml.jpg',tags:['Dulce','Popular','Cald','Feminin']},
+  {name:'Burberry Her',house:'Burberry',short:'Tineresc, modern și fresh.',desc:'Un amestec proaspăt de fructe de pădure, iasomie și musc. Energic, tânăr și plin de viață — parfumul Londrei contemporane.',tip:'Florală-fructată',cand:'Zi · Sport · Vară',style:'Tânăr · Modern · Fresh',img:'https://assets.burberry.com/is/image/Burberryltd/0b8c5e3a-2d5c-4d16-9bc8-4e7e2a57a24c.jpg',tags:['Fresh','Tânăr','Modern','Fructat']},
+  {name:'Good Girl',house:'Carolina Herrera',short:'Puternic, feminin și glam.',desc:'Cunoscut pentru flacon iconic în formă de pantofor. Note de iasomie și tuberose pe fond de cafea și cacao — femininitate cu atitudine.',tip:'Florală-orientală',cand:'Seară · Evenimente · Toamnă · Iarnă',style:'Glam · Puternic · Statement',img:'https://www.carolinaherrera.com/eu/en/fragrances/women/good-girl/good-girl-eau-de-parfum/',tags:['Glam','Puternic','Seară','Iconic']}
+];
+
+// ══ PRODUSE DATA ══
+const PROD_DATA = {
+  creme:{title:'Creme hidratante recomandate',sub:'Produse pentru piele uscată, deshidratată, sensibilă sau matură.',items:[
+    {name:'CeraVe Moisturising Cream',desc:'Cremă potrivită pentru confort și susținerea pielii. Formulă bogată cu ceramide și acid hialuronic pentru hidratare de lungă durată.',pentru:['Ten uscat','Ten sensibil','Piele deshidratată','Ten matur'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/moisturizing-cream/CeraVe_Moisturizing_Cream_12oz.png'},
+    {name:'CeraVe Facial Moisturising Lotion',desc:'Textură mai lejeră, bună pentru rutină zilnică. Non-comedogenică, se absorbe rapid fără efect gras.',pentru:['Ten mixt','Ten gras','Piele deshidratată','Rutină de zi'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/facial-moisturizing-lotion-am/CeraVe-Facial-Moisturizing-Lotion-AM-SPF-30.png'},
+    {name:'CeraVe Moisturising Lotion',desc:'O alegere bună pentru hidratare simplă și rutină clară. Textură fluidă, ușoară, potrivită pentru utilizare zilnică.',pentru:['Piele care are nevoie de confort','Rutină simplă','Îngrijire zilnică'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/daily-moisturizing-lotion/CeraVe_Daily_Moisturizing_Lotion_19oz.png'}
+  ]},
+  curatare:{title:'Produse de curățare recomandate',sub:'Primul pas din orice rutină bună începe cu o curățare potrivită.',items:[
+    {name:'CeraVe Hydrating Cleanser',desc:'Curățare blândă pentru pielea care are nevoie de confort. Nu spumeaza excesiv, menține hidratarea naturală.',pentru:['Ten uscat','Ten sensibil','Piele deshidratată','Ten matur'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-cleanser/CeraVe_Hydrating_Facial_Cleanser_12oz.png'},
+    {name:'CeraVe Foaming Cleanser',desc:'Curățare mai lejeră pentru pielea care produce mai mult sebum. Spumant, eficient, non-comedogenic.',pentru:['Ten mixt','Ten gras','Rutină de dimineață și seară'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/foaming-facial-cleanser/CeraVe_Foaming_Facial_Cleanser_12oz.png'},
+    {name:'CeraVe SA Smoothing Cleanser',desc:'O alegere bună pentru pielea care are nevoie de o curățare mai bine orientată, cu acid salicilic.',pentru:['Textură neuniformă','Piele încărcată','Rutină bine structurată'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/sa-smoothing-cleanser/CeraVe_SA_Smoothing_Cleanser_8oz.png'}
+  ]},
+  seruri:{title:'Seruri recomandate',sub:'Adaugă un pas fin și bine ales în rutina ta.',items:[
+    {name:'CeraVe Hydrating Hyaluronic Acid Serum',desc:'Serum ușor cu trei tipuri de acid hialuronic și ceramide. Hidratare intensă în straturi multiple.',pentru:['Piele deshidratată','Ten matur','Confort zilnic'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-hyaluronic-acid-serum/CeraVe_Hydrating_Hyaluronic_Acid_Serum_1oz.png'},
+    {name:'CeraVe Skin Renewing Vitamin C Serum',desc:'Serum cu vitamina C stabilizată. Luminozitate, uniformizare și protecție antioxidantă zilnică.',pentru:['Ten sensibil','Piele reactivă','Uniformizare ton'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/vitamin-c-serum/CeraVe-Vitamin-C-Serum.png'},
+    {name:'CeraVe Resurfacing Retinol Serum',desc:'Serum cu retinol encapsulat și niacinamidă. Reduce porii vizibili și netezește textura.',pentru:['Ten mixt','Ten gras','Reducere pori'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/resurfacing-retinol-serum/CeraVe_Resurfacing_Retinol_Serum_1oz.png'}
+  ]},
+  spf:{title:'Produse cu SPF recomandate',sub:'Pasul care completează rutina ta de dimineață.',items:[
+    {name:'CeraVe Hydrating Sunscreen SPF 50',desc:'Cremă de protecție solară cu ceramide și acid hialuronic. Fără alb rezidual, textură confortabilă.',pentru:['Ten sensibil','Ten uscat','Ten normal'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-sunscreen-face-lotion-spf-50/CeraVe_Hydrating_Sunscreen_SPF50_Face_Body_Lotion_5oz.png'},
+    {name:'CeraVe AM Facial Moisturising Lotion SPF 25',desc:'Hidratare și protecție solară în același pas. Textura lejeră, ideală pentru rutina de zi.',pentru:['Ten mixt','Ten gras','Ten normal'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/facial-moisturizing-lotion-am/CeraVe-Facial-Moisturizing-Lotion-AM-SPF-30.png'},
+    {name:'CeraVe Tinted Sunscreen SPF 30',desc:'Protecție solară ușor nuanțată cu oxid de zinc. Uniformizează tonul și protejează natural.',pentru:['Toate tipurile de ten'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/tinted-sunscreen-face-lotion-spf-30/CeraVe-Tinted-Sunscreen-SPF30-Face-Lotion-1.7oz.png'}
+  ]},
+  rutine:{title:'Rutine complete recomandate',sub:'Descoperă pașii recomandați în funcție de tipul tău de ten.',isRutine:true},
+  favorite:{title:'Produsele mele favorite',sub:'Produse alese pentru confort, rutină clară și aspect îngrijit.',items:[
+    {name:'CeraVe Hydrating Cleanser',desc:'Curățare blândă, pentru început de rutină perfect.',pentru:['Ten uscat','Ten sensibil','Ten matur'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-cleanser/CeraVe_Hydrating_Facial_Cleanser_12oz.png'},
+    {name:'CeraVe Foaming Cleanser',desc:'Curățare eficientă, pentru tenul care lucește.',pentru:['Ten mixt','Ten gras'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/foaming-facial-cleanser/CeraVe_Foaming_Facial_Cleanser_12oz.png'},
+    {name:'CeraVe Moisturising Cream',desc:'Crema mea preferată pentru hidratare bogată.',pentru:['Ten uscat','Ten sensibil','Ten matur'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/moisturizing-cream/CeraVe_Moisturizing_Cream_12oz.png'},
+    {name:'CeraVe Facial Moisturising Lotion',desc:'Variantă lejeră, perfectă pentru zi.',pentru:['Ten mixt','Ten gras','Ten normal'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/facial-moisturizing-lotion-am/CeraVe-Facial-Moisturizing-Lotion-AM-SPF-30.png'},
+    {name:'CeraVe Hydrating Sunscreen SPF 50',desc:'SPF pe care îl recomand mereu, oricărui tip de ten.',pentru:['Toate tipurile de ten'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-sunscreen-face-lotion-spf-50/CeraVe_Hydrating_Sunscreen_SPF50_Face_Body_Lotion_5oz.png'},
+    {name:'CeraVe Hydrating Hyaluronic Acid Serum',desc:'Serumul pe care îl recomand ca pas de susținere.',pentru:['Toate tipurile de ten'],img:'https://www.cerave.com/content/dam/cp-sites/cerave/cerave.com/product-images/hydrating-hyaluronic-acid-serum/CeraVe_Hydrating_Hyaluronic_Acid_Serum_1oz.png'}
+  ]}
+};
+
+const RUTINE_COMPLETE = [
+  {tip:'Ten uscat',steps:['CeraVe Hydrating Cleanser','Serum hidratant','CeraVe Moisturising Cream','SPF 50']},
+  {tip:'Ten mixt',steps:['CeraVe Foaming Cleanser','Serum lejer','CeraVe Facial Moisturising Lotion','SPF 25']},
+  {tip:'Ten gras',steps:['CeraVe Foaming Cleanser','Serum lejer','CeraVe Facial Moisturising Lotion','SPF']},
+  {tip:'Ten sensibil',steps:['CeraVe Hydrating Cleanser','Serum calmant','CeraVe Moisturising Cream','SPF']},
+  {tip:'Ten normal',steps:['CeraVe Hydrating Cleanser','Serum hidratant','CeraVe Facial Moisturising Lotion','SPF']},
+  {tip:'Ten matur',steps:['CeraVe Hydrating Cleanser','Serum vitamina C','CeraVe Moisturising Cream','SPF 50']}
+];
+
+// ══ HELPERS ══
+function getData(k){try{const v=localStorage.getItem('ab_'+k);return v?JSON.parse(v):null;}catch(e){return null;}}
+function setData(k,v){try{localStorage.setItem('ab_'+k,JSON.stringify(v));}catch(e){}}
+function getCourses(){return getData('courses')||DEFAULTS.courses;}
+function getQuestions(){return getData('testQuestions')||DEFAULTS.testQuestions;}
+function getAdminPw(){return getData('adminPw')||DEFAULTS.adminPw;}
+function escHtml(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'):''}
+function showMsg(id){const e=document.getElementById(id);if(!e)return;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),3000);}
+
+// ══ NAVIGATION ══
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const p=document.getElementById('page-'+id);
+  if(p){p.classList.add('active');window.scrollTo(0,0);}
+  closeMenu();
+  if(id==='cursuri')renderCursuri();
+  if(id==='admin')initAdmin();
+  if(id==='parfumuri')renderParfumuri();
+}
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open');}
+
+// ══ PARFUMURI ══
+function renderParfumuri(){
+  const grid=document.getElementById('parfumuri-list');
+  if(!grid)return;
+  grid.innerHTML=PARFUMURI.map((p,i)=>`
+    <div class="parfum-card">
+      <div class="parfum-img">
+        <img src="${p.img}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" loading="lazy">
+        <div class="parfum-img-placeholder" style="display:none">🌸</div>
+      </div>
+      <div class="parfum-body">
+        <div class="parfum-house">${p.house}</div>
+        <div class="parfum-name">${p.name}</div>
+        <p class="parfum-desc">${p.short}</p>
+        <div class="parfum-tags">${p.tags.map(t=>`<span class="parfum-tag">${t}</span>`).join('')}</div>
+        <button class="btn-primary" style="width:100%" onclick="showParfum(${i})">Vezi parfumul</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showParfum(i){
+  const p=PARFUMURI[i];
+  document.getElementById('parfum-title').textContent=p.name;
+  document.getElementById('parfum-sub').textContent=p.house+' — '+p.short;
+  document.getElementById('parfum-content').innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3rem">
+      <div style="background:linear-gradient(160deg,var(--rose-pale),var(--ivory));padding:3rem;display:flex;align-items:center;justify-content:center;min-height:320px">
+        <img src="${p.img}" alt="${p.name}" style="max-height:280px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(194,55,90,0.18))" onerror="this.parentElement.innerHTML='<div style=\\'font-size:5rem;opacity:0.25\\'>🌸</div>'">
+      </div>
+      <div>
+        <div style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:0.3rem">${p.house}</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--dark);margin-bottom:1.5rem">${p.name}</h2>
+        <div class="card-tags" style="margin-bottom:1.5rem">${p.tags.map(t=>`<span class="card-tag">${t}</span>`).join('')}</div>
+        <p style="font-size:0.92rem;color:var(--mid);line-height:1.8;margin-bottom:1.5rem">${p.desc}</p>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem">
+          <tr style="border-bottom:1px solid rgba(194,55,90,0.1)"><td style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-deep);padding:0.5rem 0;width:40%">Tip parfum</td><td style="font-size:0.88rem;color:var(--text)">${p.tip}</td></tr>
+          <tr style="border-bottom:1px solid rgba(194,55,90,0.1)"><td style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-deep);padding:0.5rem 0">Când se poartă</td><td style="font-size:0.88rem;color:var(--text)">${p.cand}</td></tr>
+          <tr><td style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-deep);padding:0.5rem 0">Ce transmite</td><td style="font-size:0.88rem;color:var(--text)">${p.style}</td></tr>
+        </table>
+        <div style="background:var(--rose-pale);border-left:2px solid var(--rose-deep);padding:1rem 1.2rem;margin-bottom:1.5rem;font-style:italic;color:var(--mid);font-size:0.88rem">Recomandarea mea: Este unul dintre parfumurile care completează bine o imagine feminină premium.</div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
+          <button class="btn-primary" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Întreabă pe Instagram</button>
+          <button class="btn-ghost" onclick="showPage('parfumuri')">← Parfumuri</button>
+          <button class="btn-ghost" onclick="showPage('home')">Acasă</button>
+        </div>
+      </div>
+    </div>
+    <style>@media(max-width:700px){#parfum-content > div:first-child{grid-template-columns:1fr!important}}</style>
+
+`;
+showPage(‘parfum’);
+}
+
+// ══ PRODUSE SUBPAGES ══
+function showProdSubpage(key){
+const d=PROD_DATA[key];
+document.getElementById(‘prod-sub-eyebrow’).textContent=d.title;
+document.getElementById(‘prod-sub-title’).textContent=d.title;
+document.getElementById(‘prod-sub-sub’).textContent=d.sub;
+
+let html=’’;
+if(d.isRutine){
+html=`<div class="routine-blocks">`+RUTINE_COMPLETE.map(r=>` <div class="routine-block-card"> <div class="rb-title">Rutina pentru ${r.tip}</div> <ul class="rb-steps"> ${r.steps.map(s=>`<li>${s}</li>`).join('')} </ul> <button class="btn-ghost" style="margin-top:1rem;width:100%" onclick="showPage('test-intro')">Descoperă rutina ta</button> </div> `).join(’’)+`</div>`;
+} else {
+html=d.items.map(item=>` <div class="prod-row"> <div class="prod-row-img"> <img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'" loading="lazy"> </div> <div class="prod-row-body"> <div class="prod-row-name">${item.name}</div> <p class="prod-row-text">${item.desc}</p> <div class="prod-row-tags">${item.pentru.map(p=>`<span class="prod-row-tag">${p}</span>`).join('')}</div> <button class="btn-primary" onclick="showProdusSingle('${escHtml(item.name)}','${key}')">Vezi produsul</button> </div> </div> `).join(’’);
+}
+document.getElementById(‘prod-sub-content’).innerHTML=html;
+showPage(‘prod-sub’);
+}
+
+function showProdusSingle(name, fromKey){
+// find product across all categories
+let item=null;
+for(const k in PROD_DATA){
+if(PROD_DATA[k].items){
+const found=PROD_DATA[k].items.find(i=>i.name===name);
+if(found){item=found;break;}
+}
+}
+if(!item)return;
+
+document.getElementById(‘produs-title’).textContent=item.name;
+document.getElementById(‘produs-sub’).textContent=‘Produs recomandat de Annet&Beauty’;
+document.getElementById(‘produs-content’).innerHTML=` <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:2rem"> <div style="background:linear-gradient(160deg,var(--rose-pale),var(--ivory));padding:3rem;display:flex;align-items:center;justify-content:center;min-height:300px"> <img src="${item.img}" alt="${item.name}" style="max-height:260px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 28px rgba(194,55,90,0.15))" onerror="this.parentElement.innerHTML='<div style=\\'font-size:4rem;opacity:0.2\\'>🧴</div>'"> </div> <div> <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--dark);margin-bottom:1rem">${item.name}</h2> <p style="font-size:0.9rem;color:var(--mid);line-height:1.8;margin-bottom:1.2rem">${item.desc}</p> <div style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:0.6rem">Pentru cine este</div> <div class="prod-row-tags" style="margin-bottom:1.2rem">${item.pentru.map(p=>`<span class="prod-row-tag">${p}</span>`).join('')}</div> <div style="background:var(--rose-pale);border-left:2px solid var(--rose-deep);padding:1rem 1.2rem;margin-bottom:1.5rem;font-style:italic;color:var(--mid);font-size:0.88rem">Se aplică după curățare (și serum dacă îl folosești), dimineața sau seara, în funcție de rutina ta.</div> <div style="display:flex;gap:0.8rem;flex-wrap:wrap"> <button class="btn-primary" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Scrie pe Instagram</button> <button class="btn-ghost" onclick="showPage('prod-sub')">← Înapoi</button> <button class="btn-ghost" onclick="showPage('home')">Acasă</button> </div> </div> </div> <style>@media(max-width:700px){#produs-content > div:first-child{grid-template-columns:1fr!important}}</style> `;
+showPage(‘produs’);
+}
+
+// ══ TEST ══
+let testAnswers={},testCurrent=0;
+function startTest(){testAnswers={};testCurrent=0;showPage(‘test’);renderQuestion();}
+function renderQuestion(){
+const questions=getQuestions();
+const q=questions[testCurrent];
+const letters=[‘A’,‘B’,‘C’,‘D’,‘E’,‘F’];
+document.getElementById(‘test-q-label’).textContent=`Întrebarea ${testCurrent+1} din ${questions.length}`;
+const pct=Math.round((testCurrent/questions.length)*100);
+document.getElementById(‘test-q-pct’).textContent=pct+’%’;
+document.getElementById(‘test-progress-fill’).style.width=pct+’%’;
+document.getElementById(‘test-question-text’).textContent=q.q;
+const optDiv=document.getElementById(‘test-options’);
+optDiv.innerHTML=’’;
+q.opts.forEach((opt,i)=>{
+const div=document.createElement(‘div’);
+div.className=‘test-option’+(testAnswers[testCurrent]===i?’ selected’:’’);
+div.innerHTML=`<div class="test-option-letter">${letters[i]}</div><div class="test-option-text">${opt}</div>`;
+div.onclick=()=>{testAnswers[testCurrent]=i;renderQuestion();};
+optDiv.appendChild(div);
+});
+document.getElementById(‘test-prev-btn’).style.display=testCurrent>0?‘inline-block’:‘none’;
+const nextBtn=document.getElementById(‘test-next-btn’);
+nextBtn.textContent=testCurrent===questions.length-1?‘Vezi rezultatul →’:‘Continuă →’;
+}
+function testNext(){
+const questions=getQuestions();
+if(testAnswers[testCurrent]===undefined){
+document.getElementById(‘test-options’).style.outline=‘1px solid var(–rose-deep)’;
+setTimeout(()=>document.getElementById(‘test-options’).style.outline=’’,800);
+return;
+}
+if(testCurrent<questions.length-1){testCurrent++;renderQuestion();}
+else calcResult();
+}
+function testPrev(){if(testCurrent>0){testCurrent–;renderQuestion();}}
+function calcResult(){
+const counts=[0,0,0,0,0,0];
+Object.values(testAnswers).forEach(v=>{if(v>=0&&v<6)counts[v]++;});
+showResult(counts.indexOf(Math.max(…counts)));
+}
+
+// ══ RESULT ══
+const RESULT_DATA=[
+{type:‘Ten uscat’,desc:‘Pielea ta are nevoie de mai multă hidratare, confort și produse care susțin rutina zilnică.’,tips:[‘curățare blândă’,‘hidratare bună’,‘rutină simplă’,‘produse bine alese’],course:0,products:[‘CeraVe Hydrating Cleanser’,‘CeraVe Moisturising Cream’,‘SPF’]},
+{type:‘Ten mixt’,desc:‘Pielea ta combină zone cu exces de sebum și zone mai normale. Are nevoie de echilibru.’,tips:[‘curățare eficientă’,‘hidratare lejeră’,‘echilibru în rutină’,‘produse corecte’],course:1,products:[‘CeraVe Foaming Cleanser’,‘CeraVe Facial Moisturising Lotion’,‘SPF’]},
+{type:‘Ten gras’,desc:‘Pielea ta produce mai mult sebum. Are nevoie de o rutină curată, ușoară și bine organizată.’,tips:[‘curățare bună și blândă’,‘hidratare lejeră’,‘produse care nu încarcă’,‘consecvență’],course:2,products:[‘CeraVe Foaming Cleanser’,‘CeraVe Facial Moisturising Lotion’,‘SPF’]},
+{type:‘Ten sensibil’,desc:‘Pielea ta reacționează ușor. Are nevoie de calm, simplitate și produse bine tolerate.’,tips:[‘produse blânde’,‘rutină stabilă’,‘cât mai puțin stres’,‘SPF zilnic’],course:3,products:[‘CeraVe Hydrating Cleanser’,‘CeraVe Moisturising Cream’,‘SPF’]},
+{type:‘Ten normal’,desc:‘Pielea ta este echilibrată. Are nevoie de o rutină simplă și constantă.’,tips:[‘rutină simplă’,‘consecvență zilnică’,‘hidratare bună’,‘SPF zilnic’],course:4,products:[‘CeraVe Hydrating Cleanser’,‘CeraVe Facial Moisturising Lotion’,‘SPF’]},
+{type:‘Ten matur’,desc:‘Pielea ta are nevoie de susținere, confort, elasticitate și o rutină elegantă.’,tips:[‘hidratare bine aleasă’,‘rutină ordonată’,‘SPF zilnic’,‘constanță’],course:5,products:[‘CeraVe Hydrating Cleanser’,‘CeraVe Moisturising Cream’,‘SPF’]}
+];
+function showResult(idx){
+const r=RESULT_DATA[idx];
+const courses=getCourses();
+const c=courses[r.course];
+document.getElementById(‘result-content’).innerHTML=` <div class="result-type-badge">Tipul tău de ten</div> <div class="result-type">${r.type}</div> <p class="result-desc">${r.desc}</p> <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:0.8rem">Ce te poate ajuta</div> <ul class="result-tips">${r.tips.map(t=>`<li>${t}</li>`).join('')}</ul> <div class="result-course-box"><div><div class="result-course-label">Curs recomandat</div><div class="result-course-name">${c.name}</div></div><button class="btn-primary" onclick="openCurs(${r.course})">Vezi cursul →</button></div> <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:0.8rem">Produse recomandate</div> <div class="result-products">${r.products.map(p=>`<div class="result-product-tag">${p}</div>`).join('')}</div> <div class="result-btns"> <button class="btn-primary" onclick="openCurs(${r.course})">Vezi cursul recomandat</button> <button class="btn-outline" onclick="showPage('produse')">Produse</button> <button class="btn-ghost" onclick="startTest()">Refă testul</button> <button class="btn-ghost" onclick="showPage('home')">Acasă</button> </div> `;
+showPage(‘result’);
+}
+
+// ══ CURSURI ══
+function renderCursuri(){
+const courses=getCourses();
+const grid=document.getElementById(‘cursuri-grid’);
+if(!grid)return;
+grid.innerHTML=courses.map((c,i)=>`<div class="card"> <div class="card-num">0${i+1}</div> <div class="card-title">${c.name}</div> <p class="card-text">${c.short}</p> <button class="btn-primary" onclick="openCurs(${i})">Intră în curs</button> </div>`).join(’’);
+}
+let currentCursIdx=-1;
+function openCurs(idx){
+currentCursIdx=idx;
+const courses=getCourses();
+const c=courses[idx];
+document.getElementById(‘access-curs-title’).textContent=c.name;
+document.getElementById(‘access-code-input’).value=’’;
+document.getElementById(‘access-error’).classList.remove(‘show’);
+showPage(‘curs-access’);
+}
+function checkCursCode(){
+const courses=getCourses();
+const c=courses[currentCursIdx];
+const input=document.getElementById(‘access-code-input’).value.trim();
+if(input===c.code){
+document.getElementById(‘access-error’).classList.remove(‘show’);
+renderCursContent(currentCursIdx);
+showPage(‘curs-content’);
+} else {
+document.getElementById(‘access-error’).classList.add(‘show’);
+}
+}
+function renderCursContent(idx){
+const courses=getCourses();
+const c=courses[idx];
+document.getElementById(‘content-curs-title’).textContent=c.name;
+const products=(c.products||’’).split(’\n’).filter(Boolean);
+const html=` <div class="course-hero"><div class="course-hero-title">Cum îți înțelegi și îngrijești corect ${c.tip.toLowerCase()}</div><p class="course-hero-sub">${c.intro}</p></div> <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2.5rem"> <button class="btn-ghost" onclick="showPage('cursuri')">← Cursuri</button> <button class="btn-ghost" onclick="showPage('home')">Acasă</button> </div> ${rChapter(1,'Ce este '+c.tip.toLowerCase(),c.cap1)} ${rChapter(2,'Cum îți dai seama că ai '+c.tip.toLowerCase(),c.cap2)} ${rChapter(3,'Greșeli frecvente',c.cap3)} <div class="chapter"> <div class="chapter-header"><div class="chapter-num">5</div><div class="chapter-title">Rutina de dimineață și seară</div></div> <div class="chapter-body"> <div class="routine-grid"> <div class="routine-block"><div class="routine-block-title">☀ Dimineața</div> <div class="routine-step"><div class="routine-step-num">1</div><div><div class="routine-step-text">Curățare</div><div class="routine-step-product">${products[0]||''}</div></div></div> <div class="routine-step"><div class="routine-step-num">2</div><div><div class="routine-step-text">Serum</div><div class="routine-step-product">Serum hidratant</div></div></div> <div class="routine-step"><div class="routine-step-num">3</div><div><div class="routine-step-text">Cremă</div><div class="routine-step-product">${products[1]||''}</div></div></div> <div class="routine-step"><div class="routine-step-num">4</div><div><div class="routine-step-text">SPF</div><div class="routine-step-product">SPF zilnic</div></div></div> </div> <div class="routine-block"><div class="routine-block-title">🌙 Seara</div> <div class="routine-step"><div class="routine-step-num">1</div><div><div class="routine-step-text">Curățare</div><div class="routine-step-product">${products[0]||''}</div></div></div> <div class="routine-step"><div class="routine-step-num">2</div><div><div class="routine-step-text">Serum</div><div class="routine-step-product">Serum</div></div></div> <div class="routine-step"><div class="routine-step-num">3</div><div><div class="routine-step-text">Cremă</div><div class="routine-step-product">${products[1]||''}</div></div></div> </div> </div> <div class="accent-box">O rutină bună este o rutină pe care o poți respecta. Câteva produse bine alese, aplicate consecvent, fac diferența.</div> </div> </div> <div class="products-sidebar"> <div class="products-sidebar-title">Produsele din acest curs</div> <div class="products-grid">${products.map(p=>`<div class="product-card"><div class="product-card-name">${p}</div><button class="btn-ghost" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Comandă</button></div>`).join('')}</div> </div> <div class="course-footer-btns"> <button class="btn-primary" onclick="window.open('https://www.instagram.com/anet_balan?igsh=MWZyanNuZTNqbjVlYw==','_blank')">Instagram</button> <button class="btn-outline" onclick="window.open('tel:+32467852860')">+32 467 85 28 60</button> <button class="btn-ghost" onclick="showPage('cursuri')">← Cursuri</button> <button class="btn-ghost" onclick="showPage('home')">Acasă</button> </div> `;
+document.getElementById(‘curs-content-body’).innerHTML=html;
+}
+function rChapter(num,title,content){
+const lines=(content||’’).split(’\n’).filter(Boolean);
+let body=’’;let inList=false;
+lines.forEach(line=>{
+if(line.startsWith(’•’)||line.startsWith(’-’)){if(!inList){body+=’<ul>’;inList=true;}body+=`<li>${line.replace(/^[•\-]\s*/,'')}</li>`;}
+else if(/^\d+./.test(line)){if(!inList){body+=’<ul>’;inList=true;}body+=`<li>${line.replace(/^\d+\.\s*/,'')}</li>`;}
+else{if(inList){body+=’</ul>’;inList=false;}body+=`<p>${line}</p>`;}
+});
+if(inList)body+=’</ul>’;
+return `<div class="chapter"><div class="chapter-header"><div class="chapter-num">${num}</div><div class="chapter-title">${title}</div></div><div class="chapter-body">${body}</div></div>`;
+}
+
+// ══ ADMIN ══
+let adminCurrentCurs=0;
+function initAdmin(){
+document.getElementById(‘admin-pw’).value=’’;
+document.getElementById(‘admin-error’).classList.remove(‘show’);
+document.getElementById(‘admin-login-form’).style.display=‘block’;
+document.getElementById(‘admin-panel’).classList.remove(‘show’);
+}
+function checkAdminPw(){
+const pw=document.getElementById(‘admin-pw’).value;
+if(pw===getAdminPw()){
+document.getElementById(‘admin-login-form’).style.display=‘none’;
+document.getElementById(‘admin-panel’).classList.add(‘show’);
+populateAdminFields();
+} else {
+document.getElementById(‘admin-error’).classList.add(‘show’);
+}
+}
+function showAdminTab(tab,el){
+document.querySelectorAll(’.admin-tab’).forEach(t=>t.classList.remove(‘active’));
+document.querySelectorAll(’.admin-section’).forEach(s=>s.classList.remove(‘show’));
+el.classList.add(‘active’);
+document.getElementById(‘admin-’+tab).classList.add(‘show’);
+}
+function populateAdminFields(){
+const questions=getQuestions();
+const tf=document.getElementById(‘admin-test-fields’);
+tf.innerHTML=questions.map((q,qi)=>` <div style="margin-bottom:1.5rem;padding:1rem;background:var(--rose-pale);border:1px solid rgba(194,55,90,0.15)"> <div class="admin-field"><label class="admin-label">Întrebarea ${qi+1}</label><input type="text" class="admin-input" id="tq-${qi}" value="${escHtml(q.q)}"></div> ${q.opts.map((o,oi)=>`<div class="admin-field"><label class="admin-label">Varianta ${[‘A’,‘B’,‘C’,‘D’,‘E’,‘F’][oi]}</label><input type="text" class="admin-input" id="to-${qi}-${oi}" value="${escHtml(o)}"></div>`).join('')} </div> `).join(’’);
+const courses=getCourses();
+const cs=document.getElementById(‘admin-course-selector’);
+cs.innerHTML=courses.map((c,i)=>`<button class="admin-course-btn${i===0?' active':''}" onclick="selectAdminCurs(${i},this)">Curs ${i+1}</button>`).join(’’);
+renderAdminCursFields(0);
+const sf=document.getElementById(‘admin-codes-fields’);
+sf.innerHTML=courses.map((c,i)=>`<div class="admin-field"><label class="admin-label">Cod acces — ${c.name}</label><input type="text" class="admin-input" id="sc-${i}" value="${c.code}" maxlength="6"></div>`).join(’’);
+}
+function renderAdminCursFields(idx){
+adminCurrentCurs=idx;
+const courses=getCourses();
+const c=courses[idx];
+document.getElementById(‘admin-curs-fields’).innerHTML=`<div class="admin-grid"> <div class="admin-field"><label class="admin-label">Titlu curs</label><input type="text" class="admin-input" id="ac-name" value="${escHtml(c.name)}"></div> <div class="admin-field"><label class="admin-label">Tip ten</label><input type="text" class="admin-input" id="ac-tip" value="${escHtml(c.tip)}"></div> </div> <div class="admin-field"><label class="admin-label">Descriere scurtă</label><textarea class="admin-textarea" id="ac-short">${escHtml(c.short)}</textarea></div> <div class="admin-field"><label class="admin-label">Text introductiv</label><textarea class="admin-textarea" id="ac-intro">${escHtml(c.intro)}</textarea></div> <div class="admin-field"><label class="admin-label">Capitol 1</label><textarea class="admin-textarea" rows="4" id="ac-cap1">${escHtml(c.cap1)}</textarea></div> <div class="admin-field"><label class="admin-label">Capitol 2</label><textarea class="admin-textarea" rows="4" id="ac-cap2">${escHtml(c.cap2)}</textarea></div> <div class="admin-field"><label class="admin-label">Capitol 3</label><textarea class="admin-textarea" rows="4" id="ac-cap3">${escHtml(c.cap3)}</textarea></div> <div class="admin-field"><label class="admin-label">Produse (câte unul pe linie)</label><textarea class="admin-textarea" rows="5" id="ac-products">${escHtml(c.products)}</textarea></div> <div class="admin-field"><label class="admin-label" style="color:var(--rose-deep)">Cod acces (6 cifre)</label><input type="text" class="admin-input" id="ac-code" value="${c.code}" maxlength="6"></div>`;
+}
+function selectAdminCurs(idx,el){
+document.querySelectorAll(’.admin-course-btn’).forEach(b=>b.classList.remove(‘active’));
+el.classList.add(‘active’);
+renderAdminCursFields(idx);
+}
+function saveAdminTest(){
+const questions=getQuestions();
+questions.forEach((q,qi)=>{
+const qEl=document.getElementById(`tq-${qi}`);
+if(qEl)q.q=qEl.value;
+q.opts.forEach((_,oi)=>{const oEl=document.getElementById(`to-${qi}-${oi}`);if(oEl)q.opts[oi]=oEl.value;});
+});
+setData(‘testQuestions’,questions);
+showMsg(‘save-msg-test’);
+}
+function saveAdminCurs(){
+const courses=getCourses();
+const c=courses[adminCurrentCurs];
+c.name=document.getElementById(‘ac-name’).value;
+c.tip=document.getElementById(‘ac-tip’).value;
+c.short=document.getElementById(‘ac-short’).value;
+c.intro=document.getElementById(‘ac-intro’).value;
+c.cap1=document.getElementById(‘ac-cap1’).value;
+c.cap2=document.getElementById(‘ac-cap2’).value;
+c.cap3=document.getElementById(‘ac-cap3’).value;
+c.products=document.getElementById(‘ac-products’).value;
+c.code=document.getElementById(‘ac-code’).value;
+setData(‘courses’,courses);
+showMsg(‘save-msg-curs’);
+}
+function saveAdminSetari(){
+const courses=getCourses();
+courses.forEach((c,i)=>{const el=document.getElementById(‘sc-’+i);if(el)c.code=el.value;});
+setData(‘courses’,courses);
+const newPw=document.getElementById(‘set-admin-pw’).value;
+if(newPw)setData(‘adminPw’,newPw);
+showMsg(‘save-msg-setari’);
+}
+
+// Init
+renderCursuri();
+</script>
+
+</body>
+</html>
